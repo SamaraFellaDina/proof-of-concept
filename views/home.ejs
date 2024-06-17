@@ -5,15 +5,15 @@
     <li>
       <h2>Users in the last year</h2>
       <p class="charts-description">Which users have used our site, based on their country</p>
-      <canvas id="countryChart" class="chart" width="400" height=""></canvas>
+      <canvas id="countryChart" class="chart"></canvas>
     </li>
     <li>
       <h2>browser of users</h2>
-      <canvas id="browserChart" class="chart" width="400" height=""></canvas>
+      <canvas id="browserChart" class="chart"></canvas>
     </li>
     <li>
       <h2>browser of users</h2>
-      <canvas id="devicesChart" class="chart" width="400" height=""></canvas>
+      <canvas id="devicesChart" class="chart"></canvas>
     </li>
   </ol>
 
@@ -25,7 +25,10 @@
   const colourTheme = [
     '#B9FFB7',
     '#FF7535',
-    '#5E43FF'
+    '#5E43FF',
+    '#FF00FF',
+    '#007BFF',
+    '#FFC107'
   ];
   
   const borderColour = ['#302A2F;'];
@@ -34,6 +37,7 @@
 
   const chartOptions = 
   {
+    maintainAspectRatio: false,
     scales: {
       y: {
         beginAtZero: true
@@ -56,7 +60,7 @@
       const value = parseInt(row.metricValues[0].value);
       const label = row.dimensionValues[0].value;
   
-      if (value < 13) {
+      if (value < 40) {
         // Aggregate values for "Other" group
         otherValue += value;
       } else {
@@ -74,7 +78,7 @@
   
     // Create the chart
     new Chart(country, {
-      type: 'doughnut',
+      type: 'bar',
       data: {
         labels: labels,
         datasets: [{
