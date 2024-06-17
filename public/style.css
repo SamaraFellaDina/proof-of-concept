@@ -68,21 +68,29 @@ ol {
     border-radius: var(--regular-background-radius);
     width: 40em;
     height: 40em;
+
+    display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 
-.charts li h2,
-.charts li p {
+.charts li section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.charts li section h2,
+.charts li section p {
     margin-block-start: 0;
     margin-block-end: 0;
 }
 
-.charts li h2 {
+.charts li section h2 {
     font-size: 2em;
-    text-align: center;
 }
-.charts li .charts-description {
+
+.charts li section .charts-description {
     opacity: 70%;
 }
 
@@ -90,4 +98,6 @@ ol {
     height: 100%;
     width: 100%;
     display: block;
+    max-height: calc(100% - 4em); /* Adjust for padding and header elements */
+
 }
