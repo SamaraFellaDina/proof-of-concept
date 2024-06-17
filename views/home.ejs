@@ -5,15 +5,15 @@
     <li>
       <h2>Users in the last year</h2>
       <p class="charts-description">Which users have used our site, based on their country</p>
-      <canvas id="countryChart" class="chart"></canvas>
+      <canvas id="countryChart" class="chart" style="display: block;"></canvas>
     </li>
     <li>
       <h2>browser of users</h2>
-      <canvas id="browserChart" class="chart"></canvas>
+      <canvas id="browserChart" class="chart" style="display: block;"></canvas>
     </li>
     <li>
       <h2>browser of users</h2>
-      <canvas id="devicesChart" class="chart"></canvas>
+      <canvas id="devicesChart" class="chart" style="display: block;"></canvas>
     </li>
   </ol>
 
@@ -35,15 +35,15 @@
   const borderWidth = 1.5;
 
 
-  const chartOptions = 
-  {
+  const chartOptions = {
+    responsive: true,
     maintainAspectRatio: false,
     scales: {
-      y: {
-        beginAtZero: true
-      }
+        y: {
+            beginAtZero: true
+        }
     }
-  }
+};
 
   const country = document.getElementById('countryChart');
   function createCountryChart() {

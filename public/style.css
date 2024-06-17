@@ -68,6 +68,14 @@ ol {
     border-radius: var(--regular-background-radius);
     width: 40em;
     height: 40em;
+    align-items: center;
+    justify-content: center;
+}
+
+.charts li h2,
+.charts li p {
+    margin-block-start: 0;
+    margin-block-end: 0;
 }
 
 .charts li h2 {
@@ -76,4 +84,10 @@ ol {
 }
 .charts li .charts-description {
     opacity: 70%;
+}
+
+.chart {
+    height: 100%;
+    width: 100%;
+    display: block;
 }
