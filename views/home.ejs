@@ -30,7 +30,17 @@
   
   const borderColour = ['#302A2F;'];
   const borderWidth = 1.5;
-  
+
+
+  const chartOptions = 
+  {
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  }
+
   const country = document.getElementById('countryChart');
   function createCountryChart() {
     const countryData = <%- JSON.stringify(country.rows) %>;
@@ -75,13 +85,7 @@
           borderColor: borderColour
         }]
       },
-      options: {
-        scales: {
-          y: {
-            beginAtZero: true
-          }
-        }
-      }
+      options: chartOptions
     });
   }
   createCountryChart();
@@ -132,14 +136,8 @@
   
       }]
     },
-    options: {
-      scales: {
-        y: {
-          beginAtZero: true
-        }
-      }
-    }
-  });
+    options: chartOptions
+   });
   }
   createBrowserChart();
   
@@ -188,14 +186,8 @@
         borderColor: borderColour
       }]
     },
-    options: {
-      scales: {
-        y: {
-          beginAtZero: true
-        }
-      }
-    }
-  });
+    options: chartOptions
+   });
   }
   createdevicesChart();
 
