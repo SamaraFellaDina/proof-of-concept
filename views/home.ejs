@@ -1,4 +1,3 @@
-<!-- <% console.log(devices.rows) %> -->
 <%- include('./partials/head') %>
 <main class>
   <ol class="charts">
@@ -60,35 +59,30 @@
   const country = document.getElementById('countryChart');
   function createCountryChart() {
     const countryData = <%- JSON.stringify(country.rows) %>;
-    // Initialize variables for "Other" group
     let otherValue = 0;
   
-    // Arrays to store labels and data
     const labels = [];
     const data = [];
   
-    // Iterate through the data rows
     countryData.forEach(function(row) {
       const value = parseInt(row.metricValues[0].value);
       const label = row.dimensionValues[0].value;
   
       if (value < 40) {
         // Aggregate values for "Other" group
+
         otherValue += value;
       } else {
-        // Add label and value to respective arrays
         labels.push(label);
         data.push(value);
       }
     });
   
-    // Add "Other" group if it has data
     if (otherValue > 0) {
       labels.push('Other');
       data.push(otherValue);
     }
   
-    // Create the chart
     new Chart(country, {
       type: 'bar',
       data: {
@@ -110,33 +104,10 @@
   function createBrowserChart() {
     const browserData = <%- JSON.stringify(browser.rows) %>;
   
-  // Initialize variables for "Other" group
-  let otherValue = 0;
+    let otherValue = 0;
   
-  // Arrays to store labels and data
-  const labels = [];
-  const data = [];
-  
-  // Iterate through the data rows
-  browserData.forEach(function(row) {
-    const value = parseInt(row.metricValues[0].value);
-    const label = row.dimensionValues[0].value;
-  
-    if (value < 15) {
-      // Aggregate values for "Other" group
-      otherValue += value;
-    } else {
-      // Add label and value to respective arrays
-      labels.push(label);
-      data.push(value);
-    }
-  });
-  
-  // Add "Other" group if it has data
-  if (otherValue > 0) {
-    labels.push('Other');
-    data.push(otherValue);
-  }
+    const labels = [];
+    const data = [];
   
   // Create the chart
   new Chart(browser, {
@@ -153,6 +124,7 @@
       }]
     },
     options: chartOptions
+
    });
   }
   createBrowserChart();
@@ -161,33 +133,27 @@
   function createdevicesChart() {
     const devicesData = <%- JSON.stringify(devices.rows) %>;
   
-  // Initialize variables for "Other" group
-  let otherValue = 0;
+    let otherValue = 0;
+    
+    const labels = [];
+    const data = [];
   
-  // Arrays to store labels and data
-  const labels = [];
-  const data = [];
-  
-  // Iterate through the data rows
-  devicesData.forEach(function(row) {
-    const value = parseInt(row.metricValues[0].value);
-    const label = row.dimensionValues[0].value;
-  
-    if (value < 15) {
-      // Aggregate values for "Other" group
-      otherValue += value;
-    } else {
-      // Add label and value to respective arrays
-      labels.push(label);
-      data.push(value);
+    devicesData.forEach(function(row) {
+      const value = parseInt(row.metricValues[0].value);
+      const label = row.dimensionValues[0].value;
+    
+      if (value < 15) {
+        otherValue += value;
+      } else {
+        labels.push(label);
+        data.push(value);
+      }
+    });
+    
+    if (otherValue > 0) {
+      labels.push('Other');
+      data.push(otherValue);
     }
-  });
-  
-  // Add "Other" group if it has data
-  if (otherValue > 0) {
-    labels.push('Other');
-    data.push(otherValue);
-  }
   
   // Create the chart
   new Chart(devices, {
