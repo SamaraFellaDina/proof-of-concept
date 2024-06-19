@@ -55,6 +55,7 @@ Welke kenmerken heb ik gebruikt bij het maken van dit project?
   * `dotenv`
  * Tot slot wil je de API ophalen. Volg deze [guide](https://developers.google.com/analytics/devguides/reporting/data/v1/quickstart-client-libraries) Volg de stappen vanaf stap 3
 
+***Hou er rekening mee dat je bij het maken van dit project een bemachtiging moet hebben op de `credentials.json` van Fresk.digital*** 
 
 ## Bronnen
 
