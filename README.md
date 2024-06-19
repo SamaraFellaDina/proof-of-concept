@@ -16,19 +16,49 @@
 ![mockup-01](https://github.com/SamaraFellaDina/proof-of-concept/assets/144009778/67360457-eceb-4371-bd2d-14f78ec6e0f8)
 ![mockup-02](https://github.com/SamaraFellaDina/proof-of-concept/assets/144009778/47ed6401-0d8e-4d1c-a7c1-384f41ca87be)
 
-
+Bij deze opdracht voor Fresk.digital, maak ik statistieken die van hun API's komen. Zodat zij een overzicht krijgen van hun voortgang. 
 
 ## Gebruik
 <!-- Bij Gebruik staat de user story, hoe het werkt en wat je er mee kan. -->
+* Initial setup - choose correct tech, setup repo, setup server/hosting etc [#25](https://github.com/SamaraFellaDina/proof-of-concept/issues/25)
+* Show some data from the Google Analytics API [#26](https://github.com/SamaraFellaDina/proof-of-concept/issues/26)
+* Apply the fresk branding [#27](https://github.com/SamaraFellaDina/proof-of-concept/issues/27)
+* Add login/authentication [#28](https://github.com/SamaraFellaDina/proof-of-concept/issues/28)
+* Show some data from the LinkedIn Analytics API [#29](https://github.com/SamaraFellaDina/proof-of-concept/issues/29)
+* Show some data from the Hotjar API [#30](https://github.com/SamaraFellaDina/proof-of-concept/issues/30)
+* Show some data from all three platforms of the same user (show that we can combine data) [#31](https://github.com/SamaraFellaDina/proof-of-concept/issues/31)
 
 ## Kenmerken
 <!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met JS gedaan en hoe? Misschien heb je iets met NodeJS gedaan, of heb je een framwork of library gebruikt? -->
-
+Welke kenmerken heb ik gebruikt bij het maken van dit project?
+* sever-side rendering
+* `EJS`
+* `Node`
+* `Express`
+* `ChartJS`
+* Google Analytics API
+* `.env`
+* credentials Json
+  
 ## Installatie
 <!-- Bij Instalatie staat hoe een andere developer aan jouw repo kan werken -->
+* clone deze repo naar je eigen Git desktop
+* Open de terminal
+* voer de volgende commands uit:
+  * `npm install`
+    * (Ik heb zelf ook `nodemon` gebruikt)
+  * `npm install @google-analytics/data`
+  * `npm install dotenv --save`
+* Hiermee heb je de volgende packages geinstalleerd:
+  * `Google analytics data`
+  * `node`
+  * `dotenv`
+ * Tot slot wil je de API ophalen. Volg deze [guide](https://developers.google.com/analytics/devguides/reporting/data/v1/quickstart-client-libraries) Volg de stappen vanaf stap 3
+
 
 ## Bronnen
 
 ## Licentie
 
 This project is licensed under the terms of the [MIT license](./LICENSE).
+
