@@ -58,7 +58,10 @@ Welke kenmerken heb ik gebruikt bij het maken van dit project?
 ***Hou er rekening mee dat je bij het maken van dit project een bemachtiging moet hebben op de `credentials.json` van Fresk.digital*** 
 
 ## Bronnen
-
+* [Fresk.digital](https://fresk.digital/en)
+* [dotenv](https://www.npmjs.com/package/dotenv)
+* [Google Analytics Quickstart](https://developers.google.com/analytics/devguides/reporting/data/v1/quickstart-client-libraries)
+* [Chartjs](https://www.chartjs.org/docs/latest/)
 ## Licentie
 
 This project is licensed under the terms of the [MIT license](./LICENSE).
