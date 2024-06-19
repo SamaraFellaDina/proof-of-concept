@@ -68,8 +68,11 @@ Welke kenmerken heb ik gebruikt bij het maken van dit project?
 * [Project board](https://github.com/users/SamaraFellaDina/projects/11)
 * [wiki](https://github.com/SamaraFellaDina/proof-of-concept/wiki)
 * [Iteraties](https://github.com/users/SamaraFellaDina/projects/11/views/2)
-* [Issues](https://github.com/SamaraFellaDina/proof-of-concept/issues
+* [Issues](https://github.com/SamaraFellaDina/proof-of-concept/issues)
 * [Sprint review](https://github.com/SamaraFellaDina/proof-of-concept/wiki/4.-Testen%F0%9F%A7%AA#sprint-review)
+* [commits](https://github.com/fdnd-task/proof-of-concept/compare/main...SamaraFellaDina:proof-of-concept:main)
+* [pull-requests](https://github.com/fdnd-task/proof-of-concept/pulls)
+
 ## Licentie
 
 This project is licensed under the terms of the [MIT license](./LICENSE).
