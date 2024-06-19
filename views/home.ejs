@@ -104,10 +104,33 @@
   function createBrowserChart() {
     const browserData = <%- JSON.stringify(browser.rows) %>;
   
-    let otherValue = 0;
+  // Initialize variables for "Other" group
+  let otherValue = 0;
   
-    const labels = [];
-    const data = [];
+  // Arrays to store labels and data
+  const labels = [];
+  const data = [];
+  
+  // Iterate through the data rows
+  browserData.forEach(function(row) {
+    const value = parseInt(row.metricValues[0].value);
+    const label = row.dimensionValues[0].value;
+  
+    if (value < 15) {
+      // Aggregate values for "Other" group
+      otherValue += value;
+    } else {
+      // Add label and value to respective arrays
+      labels.push(label);
+      data.push(value);
+    }
+  });
+  
+  // Add "Other" group if it has data
+  if (otherValue > 0) {
+    labels.push('Other');
+    data.push(otherValue);
+  }
   
   // Create the chart
   new Chart(browser, {
@@ -124,7 +147,6 @@
       }]
     },
     options: chartOptions
-
    });
   }
   createBrowserChart();
