@@ -51,6 +51,8 @@ ol {
     unicode-bidi: isolate;
 }
 
+
+
 .charts {
     display: flex;
     gap: 1.5em;
@@ -64,10 +66,10 @@ ol {
     --mobile-max-width-chart: 40em;
 
     background-color: var(--greyscale-color-white);
-    padding: 1em;
+    padding: 2em;
     border-radius: var(--regular-background-radius);
     width: 40em;
-    height: 40em;
+    height: 80vh;
 
     display: flex;
     align-items: center;
