@@ -51,6 +51,8 @@ ol {
     unicode-bidi: isolate;
 }
 
+
+
 .charts {
     display: flex;
     gap: 1.5em;
@@ -60,20 +62,53 @@ ol {
 
 .charts li {
     --regular-background-radius: 3em;
-    --mobile-min-width-chart: 20em;
-    --mobile-max-width-chart: 40em;
+    --mobile-width-chart: 80vw;
+    --mobile-height-chart: 60vh;
+
+    --desktop-width-chart: 40em;
+    --desktop-height-chart: 20em;
 
     background-color: var(--greyscale-color-white);
-    padding: 1em;
+    padding: 2em;
     border-radius: var(--regular-background-radius);
-    width: 40em;
-    height: 40em;
+    width: var(--mobile-width-chart);
+    height: var(--mobile-height-chart);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+
+    @media (min-width: 768px) {
+        width: var(--desktop-width-chart);
+        height: var(--desktop-height-chart);
+    }
 }
 
-.charts li h2 {
-    font-size: 2em;
-    text-align: center;
+.charts li section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-.charts li .charts-description {
+.charts li section h2,
+.charts li section p {
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+.charts li section h2 {
+    font-size: 2em;
+}
+
+.charts li section .charts-description {
     opacity: 70%;
+}
+
+.chart {
+    height: 100%;
+    width: 100%;
+    display: block;
+    max-height: calc(100% - 4em); /* Adjust for padding and header elements */
+
 }

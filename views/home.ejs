@@ -1,19 +1,31 @@
 <%- include('./partials/head') %>
-<main>
+<main class>
   <ol class="charts">
+    
     <li>
-      <h2>Users in the last year</h2>
-      <p class="charts-description">Which users have used our site, based on their country</p>
-      <canvas id="countryChart" class="chart" width="400" height=""></canvas>
+      <section>
+        <h2>Users in the last year</h2>
+        <p class="charts-description">Which users have used our site, based on their country</p>
+      </section>
+      <canvas id="countryChart" class="chart" style="display: block;"></canvas>
     </li>
+
     <li>
-      <h2>browser of users</h2>
-      <canvas id="browserChart" class="chart" width="400" height=""></canvas>
+      <section>
+        <h2>browser of users</h2>
+        <p class="charts-description">Which users have used our site, based on their users</p>
+     </section>
+      <canvas id="browserChart" class="chart" style="display: block;"></canvas>
     </li>
+
     <li>
-      <h2>browser of users</h2>
-      <canvas id="devicesChart" class="chart" width="400" height=""></canvas>
+      <section>
+        <h2>device of users</h2>
+        <p class="charts-description">Which users have used our site, based on their device</p>
+      </section>
+      <canvas id="devicesChart" class="chart" style="display: block;"></canvas>
     </li>
+
   </ol>
 
 </main>
@@ -24,12 +36,26 @@
   const colourTheme = [
     '#B9FFB7',
     '#FF7535',
-    '#5E43FF'
+    '#5E43FF',
+    '#FF00FF',
+    '#007BFF',
+    '#FFC107'
   ];
   
   const borderColour = ['#302A2F;'];
   const borderWidth = 1.5;
-  
+
+
+  const chartOptions = {
+    responsive: true,
+    maintainAspectRatio: false,
+    scales: {
+        y: {
+            beginAtZero: true
+        }
+    }
+};
+
   const country = document.getElementById('countryChart');
   function createCountryChart() {
     const countryData = <%- JSON.stringify(country.rows) %>;
@@ -42,7 +68,9 @@
       const value = parseInt(row.metricValues[0].value);
       const label = row.dimensionValues[0].value;
   
-      if (value < 13) {
+      if (value < 40) {
+        // Aggregate values for "Other" group
+
         otherValue += value;
       } else {
         labels.push(label);
@@ -56,7 +84,7 @@
     }
   
     new Chart(country, {
-      type: 'doughnut',
+      type: 'bar',
       data: {
         labels: labels,
         datasets: [{
@@ -67,13 +95,7 @@
           borderColor: borderColour
         }]
       },
-      options: {
-        scales: {
-          y: {
-            beginAtZero: true
-          }
-        }
-      }
+      options: chartOptions
     });
   }
   createCountryChart();
@@ -87,43 +109,22 @@
     const labels = [];
     const data = [];
   
-    browserData.forEach(function(row) {
-      const value = parseInt(row.metricValues[0].value);
-      const label = row.dimensionValues[0].value;
-    
-      if (value < 15) {
-        otherValue += value;
-      } else {
-        labels.push(label);
-        data.push(value);
-      }
-    });
+  // Create the chart
+  new Chart(browser, {
+    type: 'bar',
+    data: {
+      labels: labels,
+      datasets: [{
+        label: 'Aantal keer bezocht',
+        data: data,
+        backgroundColor: colourTheme,
+        borderWidth: borderWidth,
+        borderColor: borderColour
   
-    if (otherValue > 0) {
-      labels.push('Other');
-      data.push(otherValue);
-    }
-  
-    new Chart(browser, {
-      type: 'bar',
-      data: {
-        labels: labels,
-        datasets: [{
-          label: 'Aantal keer bezocht',
-          data: data,
-          backgroundColor: colourTheme,
-          borderWidth: borderWidth,
-          borderColor: borderColour
-    
-        }]
-      },
-      options: {
-        scales: {
-          y: {
-            beginAtZero: true
-          }
-       }
-     }
+      }]
+    },
+    options: chartOptions
+
    });
   }
   createBrowserChart();
@@ -154,25 +155,20 @@
       data.push(otherValue);
     }
   
-    new Chart(devices, {
-      type: 'bar',
-      data: {
-        labels: labels,
-        datasets: [{
-          label: 'Aantal keer bezocht',
-          data: data,
-          backgroundColor: colourTheme,
-          borderWidth: borderWidth,
-          borderColor: borderColour
-        }]
-      },
-      options: {
-        scales: {
-          y: {
-            beginAtZero: true
-          }
-        }
-      }
+  // Create the chart
+  new Chart(devices, {
+    type: 'bar',
+    data: {
+      labels: labels,
+      datasets: [{
+        label: 'Aantal keer bezocht',
+        data: data,
+        backgroundColor: colourTheme,
+        borderWidth: borderWidth,
+        borderColor: borderColour
+      }]
+    },
+    options: chartOptions
    });
   }
   createdevicesChart();
