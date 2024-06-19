@@ -13,7 +13,9 @@
   * [Licentie](#licentie)
 
 ## Beschrijving
+### Het idee
 ![mockup-01](https://github.com/SamaraFellaDina/proof-of-concept/assets/144009778/67360457-eceb-4371-bd2d-14f78ec6e0f8)
+### De uitwerking
 ![mockup-02](https://github.com/SamaraFellaDina/proof-of-concept/assets/144009778/47ed6401-0d8e-4d1c-a7c1-384f41ca87be)
 
 Bij deze opdracht voor Fresk.digital, maak ik statistieken die van hun API's komen. Zodat zij een overzicht krijgen van hun voortgang. 
