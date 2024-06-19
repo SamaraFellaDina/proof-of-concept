@@ -64,6 +64,12 @@ Welke kenmerken heb ik gebruikt bij het maken van dit project?
 * [dotenv](https://www.npmjs.com/package/dotenv)
 * [Google Analytics Quickstart](https://developers.google.com/analytics/devguides/reporting/data/v1/quickstart-client-libraries)
 * [Chartjs](https://www.chartjs.org/docs/latest/)
+### Handige bronnen binnen dit project
+* [Project board](https://github.com/users/SamaraFellaDina/projects/11)
+* [wiki](https://github.com/SamaraFellaDina/proof-of-concept/wiki)
+* [Iteraties](https://github.com/users/SamaraFellaDina/projects/11/views/2)
+* [Issues](https://github.com/SamaraFellaDina/proof-of-concept/issues
+* [Sprint review](https://github.com/SamaraFellaDina/proof-of-concept/wiki/4.-Testen%F0%9F%A7%AA#sprint-review)
 ## Licentie
 
 This project is licensed under the terms of the [MIT license](./LICENSE).
