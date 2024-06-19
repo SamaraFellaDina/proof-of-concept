@@ -62,19 +62,28 @@ ol {
 
 .charts li {
     --regular-background-radius: 3em;
-    --mobile-min-width-chart: 20em;
-    --mobile-max-width-chart: 40em;
+    --mobile-width-chart: 80vw;
+    --mobile-height-chart: 60vh;
+
+    --desktop-width-chart: 40em;
+    --desktop-height-chart: 20em;
 
     background-color: var(--greyscale-color-white);
     padding: 2em;
     border-radius: var(--regular-background-radius);
-    width: 40em;
-    height: 80vh;
+    width: var(--mobile-width-chart);
+    height: var(--mobile-height-chart);
 
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+
+
+    @media (min-width: 768px) {
+        width: var(--desktop-width-chart);
+        height: var(--desktop-height-chart);
+    }
 }
 
 .charts li section {
